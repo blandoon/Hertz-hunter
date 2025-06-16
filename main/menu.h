@@ -97,9 +97,11 @@ private:
   Api *api;
 
   // If using an OLED with an SH1106 chip then leave this be
-  // If using an OLED with an SSD1306 chip then comment out the SH1106 line and uncomment the SSD1306 line
-  U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2;
+  // If using an OLED with an SSD1306 chip then comment out the SH1106/1107 lines and uncomment the SSD1306 line
+  // If using Adafruit OLED FeatherWing, uncomment the SH1107 line and comment the others
+  // U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2;
   // U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2;
+  U8G2_SH1107_64X128_F_HW_I2C u8g2;
 };
 
 #endif
