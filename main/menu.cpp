@@ -13,9 +13,13 @@ void Menu::begin() {
   initMenus();
 
   // Can't call in constructor as pulldown overwritten during boot before setup() called
-  pinMode(previous_pin, INPUT_PULLDOWN);
-  pinMode(select_pin, INPUT_PULLDOWN);
-  pinMode(next_pin, INPUT_PULLDOWN);
+  // Pins on Adafruit FeatherWing OLED are pullup, not pulldown (commented and edited)
+  // pinMode(previous_pin, INPUT_PULLDOWN);
+  // pinMode(select_pin, INPUT_PULLDOWN);
+  // pinMode(next_pin, INPUT_PULLDOWN);
+  pinMode(previous_pin, INPUT_PULLUP);
+  pinMode(select_pin, INPUT_PULLUP);
+  pinMode(next_pin, INPUT_PULLUP);
 
   u8g2.begin();
   u8g2.clearBuffer();
